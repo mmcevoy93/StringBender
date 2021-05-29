@@ -16,7 +16,6 @@
         android:ems="10"
         android:hint="@string/text_view_in"
         android:inputType="textPersonName"
-        android:onClick="convertString"
         android:text="@string/edit_text_in"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.412"
@@ -52,21 +51,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:onClick="convertString"
             android:text="@string/radio_upper" />
 
         <RadioButton
             android:id="@+id/UI_RB_Lower"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="convertString"
             android:text="@string/radio_lower" />
 
         <RadioButton
             android:id="@+id/UI_RB_Flip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="convertString"
             android:text="@string/radio_flip" />
     </RadioGroup>
 

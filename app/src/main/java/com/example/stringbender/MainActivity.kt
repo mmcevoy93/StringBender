@@ -22,14 +22,12 @@
 
 ///  MAY 28, 2021 - found a KTX extension that does the add text change listener easier
 
+///  May 28, 2021 - Added when statement, removed redundancies, more listeners. XML vs Listeners?
 /////////////////////////////////////////////////////////////////////////////
 package com.example.stringbender
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.view.View
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.TextView
@@ -47,9 +45,12 @@ class MainActivity : AppCompatActivity() {
         val etValue: EditText = findViewById(R.id.UI_PT_input)
         // https://developer.android.com/kotlin/ktx/extensions-list#androidxcorewidget
         etValue.doAfterTextChanged { convertString() }
+        findViewById<RadioButton>(R.id.UI_RB_Upper).setOnClickListener { convertString() }
+        findViewById<RadioButton>(R.id.UI_RB_Lower).setOnClickListener { convertString() }
+        findViewById<RadioButton>(R.id.UI_RB_Flip).setOnClickListener { convertString() }
     }
 
-   fun convertString(view: View? = null) {
+   private fun convertString() {
         val input: String = findViewById<EditText>(R.id.UI_PT_input).text.toString()
         var output = ""
         if (findViewById<RadioButton>(R.id.UI_RB_Upper).isChecked){
@@ -60,12 +61,11 @@ class MainActivity : AppCompatActivity() {
         }
         if(findViewById<RadioButton>(R.id.UI_RB_Flip).isChecked) {
             for (c in input) {
-                if (c.isLowerCase())
-                    output += c.uppercase()
-                else if (c.isUpperCase())
-                    output += c.lowercase()
-                else
-                    output += c
+                when {
+                    c.isLowerCase() -> output += c.uppercase()
+                    c.isUpperCase() -> output += c.lowercase()
+                    else -> output += c
+                }
             }
         }
 
