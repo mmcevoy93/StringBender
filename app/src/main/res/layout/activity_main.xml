@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/UI_Main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/UI_PT_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:autofillHints="@string/text_view_in"
+        android:ems="10"
+        android:hint="@string/text_view_in"
+        android:inputType="textPersonName"
+        android:onClick="convertString"
+        android:text="@string/edit_text_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.412"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/UI_PT_Output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="344dp"
+        android:autofillHints="@string/text_view_out"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="@string/text_view_out"
+        android:inputType="textPersonName"
+        android:text="@string/edit_text_out"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.412"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:layout_width="311dp"
+        android:layout_height="146dp"
+        app:layout_constraintBottom_toTopOf="@+id/UI_TV_Output"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UI_PT_input">
+
+        <RadioButton
+            android:id="@+id/UI_RB_Upper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="convertString"
+            android:text="@string/radio_upper" />
+
+        <RadioButton
+            android:id="@+id/UI_RB_Lower"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="convertString"
+            android:text="@string/radio_lower" />
+
+        <RadioButton
+            android:id="@+id/UI_RB_Flip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="convertString"
+            android:text="@string/radio_flip" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/UI_TV_Input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_in"
+        app:layout_constraintBottom_toTopOf="@+id/UI_PT_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.244"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.893" />
+
+    <TextView
+        android:id="@+id/UI_TV_Output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_out"
+        app:layout_constraintBottom_toTopOf="@+id/UI_PT_Output"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UI_PT_input"
+        app:layout_constraintVertical_bias="0.958" />
+</androidx.constraintlayout.widget.ConstraintLayout>

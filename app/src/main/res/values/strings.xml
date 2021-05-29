@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">StringBender</string>
+    <string name="text_view_in">Input String</string>
+    <string name="edit_text_in"></string>
+    <string name="radio_upper">Uppercase</string>
+    <string name="radio_lower">Lowercase</string>
+    <string name="radio_flip">Flipcase</string>
+    <string name="text_view_out">Output String</string>
+    <string name="edit_text_out"></string>
+</resources>
