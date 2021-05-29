@@ -20,6 +20,8 @@
 
 ///  MAY 28, 2021 - Created. Functional. Need to now test out delegates
 
+///  MAY 28, 2021 - found a KTX extension that does the add text change listener easier
+
 /////////////////////////////////////////////////////////////////////////////
 package com.example.stringbender
 
@@ -31,6 +33,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.TextView
+import androidx.core.widget.doAfterTextChanged
 
 
 class MainActivity : AppCompatActivity() {
@@ -40,20 +43,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //on text change. Need to find a simpler listener or something
+        // listener for text changes. Found an easier way to add it
         val etValue: EditText = findViewById(R.id.UI_PT_input)
-        etValue.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(p0: CharSequence?, start: Int, count: Int, after: Int) {
-                //
-            }
-
-            override fun onTextChanged(p0: CharSequence?, start: Int, before: Int, count: Int) {
-                convertString()
-            }
-            override fun afterTextChanged(s: Editable) {
-                //
-            }
-        })
+        // https://developer.android.com/kotlin/ktx/extensions-list#androidxcorewidget
+        etValue.doAfterTextChanged { convertString() }
     }
 
    fun convertString(view: View? = null) {
